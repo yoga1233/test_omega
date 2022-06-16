@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
@@ -6,13 +8,14 @@ class LoginController extends GetxController {
 
   RxBool isValidateForm = false.obs;
 
-  isValidUser() => isValidUserName.toggle();
-  isValidPass() => isValidPassword.toggle();
+  isValidUser(bool valid) => isValidUserName.value = valid;
+  isValidPass(bool valid) => isValidPassword.value = valid;
 
   validForm() {
-    if (isValidUserName.value && isValidPassword.value) {
-      isValidateForm.toggle();
+    if (isValidUserName.value == true && isValidPassword.value == true) {
+      isValidateForm.value = true;
+    } else {
+      isValidateForm.value = false;
     }
-    isValidateForm.value = false;
   }
 }
