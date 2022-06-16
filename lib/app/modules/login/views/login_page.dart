@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_omega/app/modules/home/views/home_view.dart';
 import 'package:test_omega/app/modules/login/controllers/login_controller.dart';
+import 'package:test_omega/app/routes/app_pages.dart';
 
 import '../widgets/custom_text_form.dart';
 
@@ -70,7 +71,7 @@ class LoginPage extends GetView<LoginController> {
               Obx(() => InkWell(
                     onTap: controller.isValidateForm.value
                         ? () {
-                            Get.off(() => const HomeView());
+                            Get.offNamedUntil(Routes.home, (route) => false);
                           }
                         : () {},
                     child: Container(

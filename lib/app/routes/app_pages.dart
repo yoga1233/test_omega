@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:test_omega/app/modules/login/bindings/login_binding.dart';
-import 'package:test_omega/app/modules/login/controllers/login_controller.dart';
 import 'package:test_omega/app/modules/login/views/login_page.dart';
+import 'package:test_omega/app/modules/main/views/main_page.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
@@ -24,5 +24,9 @@ class AppPages {
       page: () => const HomeView(),
       binding: HomeBinding(),
     ),
+    GetPage(
+      name: _Paths.main,
+      page: () => const MainPage(),
+    )
   ];
 }
