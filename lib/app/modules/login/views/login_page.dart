@@ -70,6 +70,7 @@ class LoginPage extends GetView<LoginController> {
               Obx(() => InkWell(
                     onTap: controller.isValidateForm.value
                         ? () {
+                            controller.isLogin(cUsername.text, cPassword.text);
                             Get.offNamedUntil(Routes.main, (route) => false);
                           }
                         : () {},

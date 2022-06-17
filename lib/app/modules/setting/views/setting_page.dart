@@ -7,7 +7,10 @@ class SettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('hello'),
+        child: Text(
+          'hello',
+          style: TextStyle(fontSize: 20),
+        ),
       ),
     );
   }

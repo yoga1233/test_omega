@@ -10,10 +10,17 @@ class MainController extends GetxController {
   GetStorage box = GetStorage();
 
   login() {
-    if (box.read("isLogin") == true) {
+    if (box.read("isLogin") == 'true') {
       isLogin.value = true;
+      print(isLogin);
     } else {
       isLogin.value = false;
     }
+  }
+
+  @override
+  void onInit() {
+    login();
+    super.onInit();
   }
 }

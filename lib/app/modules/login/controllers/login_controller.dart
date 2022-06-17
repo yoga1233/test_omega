@@ -7,8 +7,6 @@ class LoginController extends GetxController {
 
   RxBool isValidateForm = false.obs;
 
-  RxString username = ''.obs;
-  RxString password = ''.obs;
   GetStorage box = GetStorage();
 
   isValidUser(bool valid) => isValidUserName.value = valid;
@@ -22,11 +20,13 @@ class LoginController extends GetxController {
     }
   }
 
-  isLogin() {
-    if (username.value == 'user' && password.value == '123456') {
+  isLogin(String username, String password) {
+    if (username == 'user' && password == '123456') {
       box.write("isLogin", "true");
+      print('berhasil login');
     } else {
       box.write("isLogin", "false");
+      print('username atau password salah');
     }
   }
 }

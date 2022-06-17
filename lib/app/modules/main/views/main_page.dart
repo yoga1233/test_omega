@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/state_manager.dart';
 import 'package:test_omega/app/modules/home/views/home_view.dart';
 import 'package:test_omega/app/modules/main/controllers/main_controller.dart';
@@ -39,7 +40,13 @@ class MainPage extends GetView<MainController> {
                     ),
                     IconButton(
                       onPressed: () {
-                        controller.currentIndex(2);
+                        if (controller.isLogin.value) {
+                          controller.currentIndex(2);
+                        } else {
+                          Get.defaultDialog(
+                              onConfirm: () => Get.back(),
+                              middleText: "Invalid Credential");
+                        }
                       },
                       icon: const Icon(Icons.settings),
                     ),
